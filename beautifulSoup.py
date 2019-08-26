@@ -41,7 +41,7 @@ for a in soup.find_all(class_='item-name'):
     target = "https://www.yamada-denkiweb.com"+a_tag.attrs['href']
     set_url.add(target)
 
-num = 0
+num = 1
 for i in set_url:
     id_num = num
     ID = i.split("https://www.yamada-denkiweb.com/")[1]
@@ -49,7 +49,7 @@ for i in set_url:
     S = BeautifulSoup(r.text , "html.parser")
     
     #ID-number
-    count = len(set_url) - 1
+    count = len(set_url)
     print("【"+str(id_num)+" / "+ str(count)+ "】")
     #URL
     print(OKBLUE+i+ENDC)
