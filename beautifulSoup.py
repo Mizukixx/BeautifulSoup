@@ -46,7 +46,8 @@ for i in set_url:
     id_num = num
     ID = i.split("https://www.yamada-denkiweb.com/")[1]
     r = requests.get(i)
-    S = BeautifulSoup(r.text , "html.parser")
+    # r.textで文字化けしたので
+    S = BeautifulSoup(r.content , "html.parser")
     
     #ID-number
     count = len(set_url)
